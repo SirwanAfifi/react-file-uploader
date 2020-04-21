@@ -19,14 +19,14 @@ const FileUploader = (props: FileUploaderProps) => {
     fileUpload && fileUpload.current?.click();
   };
   const onFileUploadClicked = async () => {
-    const url = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+    const url = /((http|ftp|https):\/\/)?[-a-zA-Z0-9@:%._\+~#=]{2,256}/gi;
     if (!url.test(props.uploadURL)) {
       throw new Error("Invalid URL");
     }
 
     const formData = new FormData();
     const file = fileUpload.current?.files?.item(0) as File;
-    formData.append("files[]", file);
+    formData.append("file", file);
     try {
       setLoading(true);
       const response = await fetch(props.uploadURL, {

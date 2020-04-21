@@ -10,10 +10,12 @@
     "clean": "rimraf ./development && rimraf -rf ./.cache"
   },
   "dependencies": {
+    "@types/axios": "^0.14.0",
     "@types/node": "^13.13.0",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
     "@types/styled-components": "^5.1.0",
+    "axios": "^0.19.2",
     "parcel-bundler": "^1.12.4",
     "react": ">= 16.8.0",
     "react-dom": ">= 16.8.0",
