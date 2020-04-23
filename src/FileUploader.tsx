@@ -26,7 +26,7 @@ const FileUploader = (props: FileUploaderProps) => {
 
     const formData = new FormData();
     const file = fileUpload.current?.files?.item(0) as File;
-    formData.append("file", file);
+    formData.append("files", file);
     try {
       setLoading(true);
       const response = await fetch(props.uploadURL, {

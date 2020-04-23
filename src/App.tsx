@@ -4,7 +4,7 @@ import { FileUploader } from "./FileUploader";
 export default () => {
   return (
     <div className="container">
-      <FileUploader uploadURL="http://localhost:8081/samples/php/process.php" />
+      <FileUploader uploadURL="http://localhost:5000/api/home/upload" />
     </div>
   );
 };
